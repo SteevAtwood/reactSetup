@@ -6,6 +6,8 @@ import Nav from "./components/Nav";
 import WelcomePage from "./pages/Homepage";
 import SecuredPage from "./pages/Securedpage";
 import PrivateRoute from "./helpers/PrivateRoute";
+import AdminPage from "./pages/AdminPage";
+import UserPage from "./pages/UserPage";
 
 
 function App() {
@@ -24,7 +26,8 @@ function App() {
                </PrivateRoute>
              }
            />
-           
+           <Route path="/admin" element={<AdminPage />} />
+           <Route path="/user" element={<UserPage />} />
          </Routes>
        </BrowserRouter>
      </ReactKeycloakProvider>

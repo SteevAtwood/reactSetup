@@ -4,6 +4,22 @@ import { useKeycloak } from "@react-keycloak/web";
 const Nav = () => {
   const { keycloak, initialized } = useKeycloak();
 
+  const login = async () => {
+    try {
+      await keycloak.login({ redirectUri: "http://localhost:3000/secured" });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const logout = async () => {
+    try {
+      await keycloak.logout({ redirectUri: "http://localhost:3000" });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div>
       <div className="top-0 w-full flex flex-wrap">
@@ -31,7 +47,7 @@ const Nav = () => {
                     <button
                       type="button"
                       className="text-blue-800"
-                      onClick={() => keycloak.login()}
+                      onClick={login}
                     >
                       Login
                     </button>
@@ -41,7 +57,7 @@ const Nav = () => {
                     <button
                       type="button"
                       className="text-blue-800"
-                      onClick={() => keycloak.login()}
+                      onClick={logout}
                     >
                       Logout ({keycloak.tokenParsed.preferred_username})
                     </button>
