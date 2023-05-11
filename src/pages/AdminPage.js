@@ -3,7 +3,7 @@ import React from "react";
 const AdminPage = () => {
   return (
     <div>
-      <h1>Hello Admin, please, log in</h1>
+      <h1>Hello Admin, how was your day?</h1>
     </div>
   );
 };
