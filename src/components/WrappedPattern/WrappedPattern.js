@@ -22,6 +22,7 @@ const WrappedPattern = (props) => {
     return (
       <div>
         <Header />
+        <div>{props.children}</div>
       </div>
     );
   }

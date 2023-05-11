@@ -1,10 +1,13 @@
 import React from "react";
+import WrappedPattern from "../components/WrappedPattern/WrappedPattern";
 
 const AdminPage = () => {
   return (
-    <div>
-      <h1>Hello Admin, how was your day?</h1>
-    </div>
+    <WrappedPattern>
+      <div>
+        <h1>Hello Admin, how was your day?</h1>
+      </div>
+    </WrappedPattern>
   );
 };
 

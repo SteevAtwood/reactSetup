@@ -4,19 +4,19 @@ import { useKeycloak } from "@react-keycloak/web";
 
 
 
-import useAccountType, { ADMIN } from "../../hooks/useAccountType";
+// import useAccountType, { ADMIN } from "../../hooks/useAccountType";
 
 
 
 const Header = (props) => {
   const { keycloak } = useKeycloak();
   const isAuthenticated = keycloak.authenticated;
-  const accountType = useAccountType();
-  const isAdmin = accountType === ADMIN;
+  // const accountType = useAccountType();
+  // const isAdmin = accountType === ADMIN;
 
-  if (!isAdmin) {
-    return null;
-  }
+  // if (!isAdmin) {
+  //   return null;
+  // }
 
   const loginClick = async () => {
     try {

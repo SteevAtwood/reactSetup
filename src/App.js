@@ -12,7 +12,6 @@ function App() {
     <div>
       <ReactKeycloakProvider authClient={keycloak}>
         <BrowserRouter>
-          <WrappedPattern />
           <Routes>
             <Route exact path="/" element={<UserPage />} />
             <Route path="/admin" element={<AdminPage />} />
