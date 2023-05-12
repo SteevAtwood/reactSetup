@@ -1,50 +1,31 @@
 import React from "react";
 import { useKeycloak } from "@react-keycloak/web";
 
+import "./Header.css";
 
-
-
-// import useAccountType, { ADMIN } from "../../hooks/useAccountType";
-
-
-
-const Header = (props) => {
+const Header = () => {
   const { keycloak } = useKeycloak();
   const isAuthenticated = keycloak.authenticated;
-  // const accountType = useAccountType();
-  // const isAdmin = accountType === ADMIN;
 
-  // if (!isAdmin) {
-  //   return null;
-  // }
-
-  const loginClick = async () => {
-    try {
-      await keycloak.login({ redirectUri: "http://localhost:3000/admin" });
-    } catch (err) {
-      console.error(err);
-    }
+  const loginClick = () => {
+    keycloak.login({ redirectUri: "http://localhost:3000/admin" });
   };
 
-  const logoutClick = async () => {
-    try {
-      await keycloak.logout({ redirectUri: "http://localhost:3000" });
-    } catch (err) {
-      console.error(err);
-    }
+  const logoutClick = () => {
+    keycloak.logout({ redirectUri: "http://localhost:3000" });
   };
 
   return (
-    <div >
-      <div >
+    <div className="main-header">
+      <div className="main-btn">
         {!isAuthenticated && (
-          <button type="button" className="text-blue-800" onClick={loginClick}>
+          <button type="button" className="btn" onClick={loginClick}>
             Login
           </button>
         )}
 
         {isAuthenticated && (
-          <button type="button" className="text-blue-800" onClick={logoutClick}>
+          <button type="button" className="btn" onClick={logoutClick}>
             Logout ({keycloak.tokenParsed.preferred_username})
           </button>
         )}

@@ -3,8 +3,10 @@ import { useKeycloak } from "@react-keycloak/web";
 
 import Header from "../Header/Header";
 
+import "./Wrapped.css";
 
-const WrappedPattern = (props) => {
+
+const Wrapped = (props) => {
   const { keycloak } = useKeycloak();
 
   const isLoggedIn = keycloak.authenticated;
@@ -13,14 +15,14 @@ const WrappedPattern = (props) => {
 
   if (isLoggedIn == true) {
     return (
-      <div>
+      <div className="main-wrapped">
         <Header />
-        <div>{props.children}</div>
+        <div className="main-children">{props.children}</div>
       </div>
     );
   } else {
     return (
-      <div>
+      <div className="main-wrapped">
         <Header />
         <div>{props.children}</div>
       </div>
@@ -28,4 +30,4 @@ const WrappedPattern = (props) => {
   }
 };
 
-export default WrappedPattern;
+export default Wrapped;
