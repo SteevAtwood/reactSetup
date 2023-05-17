@@ -14,13 +14,18 @@
 
 .main-btn {
     background-color: rgb(48, 149, 48);
-    color: white;
     display: flex;
     font-size: 1.1rem;
     padding: 0.5rem 1.2rem;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
+    
+}
+
+.btn {
+  color: azure;
+  text-align: right;
 }
 
 
