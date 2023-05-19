@@ -3,6 +3,7 @@
   font-size: 2rem;
   font-weight: bold;
   color: rgb(48, 149, 48);
+<<<<<<< HEAD:src/components/Search/Search.css
 }
 
 .main-h2 {
@@ -21,21 +22,48 @@
 
 /* .main-content {
   background-color: rgb(92, 90, 90);
+=======
+}
+
+.main-h2 {
+  text-align: center;
+  margin: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(20, 37, 20);
+}
+
+.main-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.main-content {
+  /* background-color: rgb(92, 90, 90); */
+>>>>>>> 05811333254af06b55098a02d0719f219388ceae:src/pages/UserPage.css
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 4rem;
   flex-grow: 1;
  
+<<<<<<< HEAD:src/components/Search/Search.css
 } */
+=======
+}
+>>>>>>> 05811333254af06b55098a02d0719f219388ceae:src/pages/UserPage.css
 
 .main-btn {
   color: rgb(48, 149, 48);
   margin: auto;
+<<<<<<< HEAD:src/components/Search/Search.css
 }
 
 .btn {
   color: white;
+=======
+>>>>>>> 05811333254af06b55098a02d0719f219388ceae:src/pages/UserPage.css
 }
 
 .main-input-search {
