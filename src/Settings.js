@@ -1,7 +1,7 @@
 export const Settings = {
   BACKEND_URL: "http://localhost:8081",
   BACKEND_ENDPOINTS: {
-    SEARCH: "/search/{password}",
+    SEARCH: "/search/password1",
   },
 
   AUTH: {

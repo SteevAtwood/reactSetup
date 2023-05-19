@@ -1,57 +1,47 @@
 import React, { useEffect, useState } from "react";
-import { useKeycloak } from "@react-keycloak/web";
-import { Settings } from "../Settings";
-
-import "./UserPage.css";
+import Search from "../components/Search/Search";
 
 const UserPage = () => {
-  const { keycloak } = useKeycloak();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
+  const [inputValue, setInputValue] = useState("");
 
   const searchBarHandler = (event) => {
     event.preventDefault();
-    fetch(Settings.BACKEND_URL + Settings.BACKEND_ENDPOINTS.SEARCH, {
+    fetch(`http://localhost:8081/search/${inputValue}`, {
       method: "get",
       headers: {
         Accept: "application/json",
-        Authorization: "Bearer " + keycloak.token,
       },
     })
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
+      .then((response) => response.json())
+      .then((receivedData) => {
+        setData(receivedData);
+      });
+  };
 
-      .then((recievedData) => {
-        console.log(recievedData);
-        setData(recievedData);
-      })
-      .catch(console.error);
+  const inputValueHandler = (event) => {
+    setInputValue(event.target.value);
   };
 
   return (
     <>
+      <Search
+        onSearchBarHandler={searchBarHandler}
+        onInputValue={inputValue}
+        onInputValueHandler={inputValueHandler}
+      />
       <div>
-        <form onSubmit={searchBarHandler} className="main-content">
-          <h1 className="main-h1">Welcome User</h1>
-          <label>
-            Write Password:
-            <input
-              className="main-input-search"
-              type="password"
-              name="password"
-            />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
-      <div>
-        {data.map((item) => (
-          <div key={item.id}>
-            <h2>{item.text}</h2>
-            <p>{item.link}</p>
+        {data ? (
+          <div>
+            <p>Here is your wanted book...</p>
+            <ul>
+              <li>{data.text}</li>
+              <li>{data.link}</li>
+            </ul>
           </div>
-        ))}
+        ) : (
+          "Nothing to read yet..."
+        )}
       </div>
     </>
   );
