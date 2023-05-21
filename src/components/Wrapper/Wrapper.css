@@ -1,0 +1,10 @@
+.main-children {
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(48, 149, 48);
+}
+
+.main-wrapped {
+    margin-top: 8rem;
+}
