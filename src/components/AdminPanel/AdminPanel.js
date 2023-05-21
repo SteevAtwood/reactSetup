@@ -19,7 +19,7 @@ const AdminPanel = () => {
       password,
     };
 
-    fetch("http://localhost:8081/add", {
+    fetch("http://164.68.102.104:8081/add", {
       method: "POST",
       headers: {
         Accept: "application/json",
