@@ -1,13 +1,13 @@
 import React from "react";
-import Wrapped from "../components/Wrapped/Wrapped";
+import Wrapper from "../../components/Wrapper/Wrapper"
 
 const AdminPage = () => {
   return (
-    <Wrapped>
+    <Wrapper>
       <div>
         <h1 className="main-h1">Hello Admin, how was your day?</h1>
       </div>
-    </Wrapped>
+    </Wrapper>
   );
 };
 

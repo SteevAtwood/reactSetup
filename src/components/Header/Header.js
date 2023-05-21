@@ -8,12 +8,14 @@ const Header = () => {
   const isAuthenticated = keycloak.authenticated;
 
   const loginClick = () => {
-    keycloak.login({ redirectUri: "http://localhost:3000/admin" });
+    keycloak.login({ redirectUri: "http://localhost:3000/admin-panel" });
   };
 
   const logoutClick = () => {
     keycloak.logout({ redirectUri: "http://localhost:3000" });
   };
+
+  
 
   return (
     <div className="main-header">

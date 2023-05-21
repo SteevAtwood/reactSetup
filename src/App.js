@@ -2,8 +2,9 @@ import React from "react";
 import { ReactKeycloakProvider } from "@react-keycloak/web";
 import keycloak from "./utils/Keycloak";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AdminPage from "./pages/AdminPage";
-import UserPage from "./pages/UserPage";
+import UserPage from "./pages/UserPage/UserPage";
+import AdminPage from "./pages/AdminPage/AdminPage";
+import AdminPanel from "./components/AdminPanel/AdminPanel";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<UserPage />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route exact path="/admin-panel" element={<AdminPanel />} />
           </Routes>
         </BrowserRouter>
       </ReactKeycloakProvider>

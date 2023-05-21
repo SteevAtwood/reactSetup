@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Search from "../components/Search/Search";
+import Search from "../../components/Search/Search";
 
 const UserPage = () => {
   const [data, setData] = useState(null);

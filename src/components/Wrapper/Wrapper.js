@@ -2,9 +2,9 @@ import React from "react";
 import { useKeycloak } from "@react-keycloak/web";
 
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
-import "./Wrapped.css";
-
+import "./Wrapper.css";
 
 const Wrapped = (props) => {
   const { keycloak } = useKeycloak();
@@ -18,6 +18,7 @@ const Wrapped = (props) => {
       <div className="main-wrapped">
         <Header />
         <div className="main-children">{props.children}</div>
+        <Footer />
       </div>
     );
   } else {
@@ -25,6 +26,7 @@ const Wrapped = (props) => {
       <div className="main-wrapped">
         <Header />
         <div>{props.children}</div>
+        <Footer />
       </div>
     );
   }

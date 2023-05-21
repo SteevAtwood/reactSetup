@@ -20,16 +20,17 @@
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
-    
 }
 
 .btn {
   color: azure;
   text-align: right;
+  transition: transform 0.3s ease;
 }
 
 
 .main-btn :active,
 .main-btn :hover {
   color: rgb(43, 41, 41);;
+  transform: scale(1.1);
 }
