@@ -5,10 +5,11 @@ import { useKeycloak } from "@react-keycloak/web";
 import "./AdminPanel.css";
 
 const AdminPanel = () => {
-  const keycloak = useKeycloak()
+  const keycloak = useKeycloak();
   const [text, setText] = useState("");
   const [link, setLink] = useState("");
   const [password, setPassword] = useState("");
+  const token = keycloak.token;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,11 +20,11 @@ const AdminPanel = () => {
       password,
     };
 
-    fetch("http://164.68.102.104:8081/add", {
+    fetch("http://localhost:8081/add", {
       method: "POST",
       headers: {
-        Accept: "application/json",
-        Authorization: "Bearer " + keycloak.token,
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(inputData),
     })
@@ -78,5 +79,3 @@ const AdminPanel = () => {
 };
 
 export default AdminPanel;
-
-

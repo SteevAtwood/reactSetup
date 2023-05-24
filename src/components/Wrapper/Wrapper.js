@@ -1,6 +1,5 @@
 import React from "react";
 import { useKeycloak } from "@react-keycloak/web";
-
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
@@ -10,6 +9,7 @@ const Wrapped = (props) => {
   const { keycloak } = useKeycloak();
 
   const isLoggedIn = keycloak.authenticated;
+
 
   //  return isLoggedIn ? children : null;
 
@@ -26,7 +26,6 @@ const Wrapped = (props) => {
       <div className="main-wrapped">
         <Header />
         <div>{props.children}</div>
-        <Footer />
       </div>
     );
   }

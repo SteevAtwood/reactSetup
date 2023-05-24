@@ -7,7 +7,7 @@ const UserPage = () => {
 
   const searchBarHandler = (event) => {
     event.preventDefault();
-    fetch(`http://164.68.102.104:8081/search/${inputValue}`, {
+    fetch(`http://localhost:8081/search/${inputValue}`, {
       method: "get",
       headers: {
         Accept: "application/json",

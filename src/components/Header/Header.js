@@ -8,11 +8,11 @@ const Header = () => {
   const isAuthenticated = keycloak.authenticated;
 
   const loginClick = () => {
-    keycloak.login({ redirectUri: "http://164.68.102.104:3000/admin-panel" });
+    keycloak.login({ redirectUri: "http://localhost:3000/admin-panel" });
   };
 
   const logoutClick = () => {
-    keycloak.logout({ redirectUri: "http://164.68.102.104:3000" });
+    keycloak.logout({ redirectUri: "http://localhost:3000" });
   };
 
   
