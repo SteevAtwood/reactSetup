@@ -15,6 +15,7 @@ const Search = (props) => {
             name="password"
             value={props.onInputValue}
             onChange={props.onInputValueHandler}
+            data-testid="password-input"
           />
         </label>
         <button type="submit" className="main-btn">
