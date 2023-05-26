@@ -3,19 +3,19 @@ import { render, screen } from "@testing-library/react";
 import { toBeInTheDocument, toHaveTextContent } from "@testing-library/jest-dom";
 import UserPage from "../pages/UserPage/UserPage"
 
-test("renders submit button", () => {
+test("submit button shown", () => {
   render(<UserPage />);
   const submitButton = screen.getByRole("button", { name: /submit/i });
   expect(submitButton).toBeInTheDocument();
 });
 
-test("button has correct label", () => {
+test("button has right label", () => {
   render(<UserPage />);
   const submitButton = screen.getByRole("button", { name: /submit/i });
   expect(submitButton).toHaveTextContent("Submit");
 });
 
-test("renders password input field", () => {
+test("password input field exist", () => {
     render(<UserPage />);
     const passwordInput = screen.getByTestId("password-input");
     expect(passwordInput).toBeInTheDocument();
