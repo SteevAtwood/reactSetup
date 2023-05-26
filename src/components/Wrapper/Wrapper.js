@@ -10,9 +10,6 @@ const Wrapped = (props) => {
 
   const isLoggedIn = keycloak.authenticated;
 
-
-  //  return isLoggedIn ? children : null;
-
   if (isLoggedIn == true) {
     return (
       <div className="main-wrapped">
@@ -25,7 +22,7 @@ const Wrapped = (props) => {
     return (
       <div className="main-wrapped">
         <Header />
-        <div>{props.children}</div>
+        <Footer />
       </div>
     );
   }
