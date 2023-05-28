@@ -1,17 +1,19 @@
 import React from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import { Editor } from "@tinymce/tinymce-react";
 
 const AdminPanel = (props) => {
-  const { handleSubmit, text, link, password, setText, setLink, setPassword } =
-    props;
+  const { handleSubmit, text, link, password, setText, setLink, setPassword } = props;
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label>
           Text:
-          <ReactQuill value={text} onChange={(value) => setText(value)} />
+          <Editor
+            apiKey="r1zba89rus746522iy1v4z3pzhnkzq5co0aw15d8i2tnwitq" 
+            value={text}
+            onEditorChange={(content) => setText(content)}
+          />
         </label>
         <label>
           Link:
@@ -36,4 +38,7 @@ const AdminPanel = (props) => {
     </div>
   );
 };
+
 export default AdminPanel;
+
+
