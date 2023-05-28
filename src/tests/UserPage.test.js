@@ -37,19 +37,17 @@ test("result shown on page", async () => {
 
   const passwordInput = screen.getByTestId("password-input");
   const submitButton = screen.getByRole("button", { name: /submit/i });
-
   act(() => {
     fireEvent.change(passwordInput, { target: { value: "password1" } });
     fireEvent.click(submitButton);
   });
-
   await act(async () => {
     await Promise.resolve(); 
   });
 
   const searchResultText = screen.getByText(searchData.text);
   const searchResultLink = screen.getByText(searchData.link);
-
+  
   expect(searchResultText).toBeInTheDocument();
   expect(searchResultLink).toBeInTheDocument();
 });
